@@ -18,15 +18,15 @@ st.title("🤝 Inclusione e Rispetto")
 st.subheader("Survey preliminare")
 
 st.markdown("""
-Rispondi alle 20 domande scegliendo il livello che meglio rappresenta la tua esperienza.
+Quanto sei d’accordo con le seguenti 20 affermazioni?
 
 Scala di valutazione:
 
-- Per niente = 1
-- Poco = 2
-- Abbastanza = 3
-- Molto = 4
-- Del tutto = 5
+- Per niente
+- Poco
+- Abbastanza
+- Molto
+- Del tutto
 """)
 
 # --------------------------------------------------
