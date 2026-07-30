@@ -59,6 +59,8 @@ questionario = {
         "descrizione": """
 Conoscere sé stessi è il primo passo verso relazioni inclusive.
 Questa sezione esplora valori personali, confini e capacità di riflessione.
+Valuta comportamenti reali degli ultimi 30–60 giorni (non le intenzioni).
+
 """,
 
         "domande": [
@@ -82,6 +84,8 @@ Questa sezione esplora valori personali, confini e capacità di riflessione.
         "descrizione": """
 L'ascolto autentico e la curiosità permettono di
 comprendere prospettive differenti e superare stereotipi.
+Pensa a 2–3 colloqui recenti (dal vivo o da remoto) con colleghi di età diversa in cui c'è stato uno scambio di opinioni rilevante.
+
 """,
 
         "domande": [
@@ -103,8 +107,9 @@ comprendere prospettive differenti e superare stereotipi.
         "immagine": "images/blocco_c.png",
 
         "descrizione": """
-L'inclusione si manifesta nella qualità delle relazioni
-e nella partecipazione alle decisioni del team.
+Questa sezione riguarda ciò che accade nelle dinamiche di gruppo con persone di età diverse. 
+Rispondi pensando al team con cui collabori più spesso e ai momenti di riunione/decisione.
+
 """,
 
         "domande": [
@@ -127,7 +132,7 @@ e nella partecipazione alle decisioni del team.
 
         "descrizione": """
 La cultura organizzativa e le pratiche aziendali
-possono favorire o ostacolare l'inclusione.
+possono favorire o ostacolare la percezione di inclusione.
 """,
 
         "domande": [
@@ -235,9 +240,9 @@ in comportamenti abituali.
     """
 ### Inclusivo (60-79)
 
-La cultura inclusiva è ben presente.
+La cultura inclusiva è ben presente, con alcune fragilità specifiche.
 
-Le persone ascoltano, collaborano e valorizzano le differenze.
+Sei sulla strada giusta: ora conta la coerenza negli snodi critici e la riduzione dei punti ciechi. 
 
 Occorre consolidare le pratiche più efficaci
 e ridurre eventuali aree di fragilità.
