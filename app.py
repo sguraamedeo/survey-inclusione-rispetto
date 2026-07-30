@@ -1,8 +1,8 @@
 import streamlit as st
 
-# --------------------------------------------------
-# CONFIGURAZIONE PAGINA
-# --------------------------------------------------
+# ==================================================
+# CONFIGURAZIONE
+# ==================================================
 
 st.set_page_config(
     page_title="Inclusione e Rispetto",
@@ -10,28 +10,33 @@ st.set_page_config(
     layout="wide"
 )
 
-# --------------------------------------------------
-# TITOLI
-# --------------------------------------------------
+# ==================================================
+# COPERTINA
+# ==================================================
+
+st.image("images/cover.png", use_container_width=True)
 
 st.title("🤝 Inclusione e Rispetto")
 st.subheader("Survey preliminare")
 
 st.markdown("""
-Quanto sei d’accordo con le seguenti 20 affermazioni?
+Questa survey ha l'obiettivo di esplorare il livello di inclusione,
+rispetto e collaborazione intergenerazionale.
 
-Scala di valutazione:
+Per ogni affermazione scegli il livello che meglio rappresenta la tua esperienza.
 
-- Per niente
-- Poco
-- Abbastanza
-- Molto
-- Del tutto
+### Scala di valutazione
+
+- Per niente = 1
+- Poco = 2
+- Abbastanza = 3
+- Molto = 4
+- Del tutto = 5
 """)
 
-# --------------------------------------------------
+# ==================================================
 # SCALA
-# --------------------------------------------------
+# ==================================================
 
 scala = {
     "Per niente": 1,
@@ -41,174 +46,145 @@ scala = {
     "Del tutto": 5
 }
 
-opzioni = list(scala.keys())
+# ==================================================
+# QUESTIONARIO
+# ==================================================
 
-# --------------------------------------------------
-# BLOCCO A
-# --------------------------------------------------
+questionario = {
 
-st.header("A - Io: consapevolezza e confini")
+    "A - Io: Consapevolezza e Confini": {
 
-st.subheader("In questo blocco osserva come ti relazioni con te stesso/a nelle situazioni che contano. Valuta comportamenti reali degli ultimi 30–60 giorni (non le intenzioni).
-")
+        "immagine": "images/blocco_a.png",
 
-A1 = scala[st.radio(
-    "1. Conosco e so nominare i valori che guidano le mie scelte al lavoro.",
-    opzioni,
-    key="A1"
-)]
+        "descrizione": """
+Conoscere sé stessi è il primo passo verso relazioni inclusive.
+Questa sezione esplora valori personali, confini e capacità di riflessione.
+""",
 
-A2 = scala[st.radio(
-    "2. So dire no quando qualcosa supera i miei confini o priorità.",
-    opzioni,
-    key="A2"
-)]
+        "domande": [
 
-A3 = scala[st.radio(
-    "3. Spiego i miei confini con chiarezza e senza senso di colpa.",
-    opzioni,
-    key="A3"
-)]
+            "Conosco e so nominare i valori che guidano le mie scelte al lavoro.",
 
-A4 = scala[st.radio(
-    "4. Prendo decisioni senza lasciarmi guidare dal bisogno di approvazione.",
-    opzioni,
-    key="A4"
-)]
+            "So dire no quando qualcosa supera i miei confini o priorità.",
 
-A5 = scala[st.radio(
-    "5. Prima di reagire, mi prendo tempo per riflettere.",
-    opzioni,
-    key="A5"
-)]
+            "Spiego i miei confini con chiarezza e senza senso di colpa.",
 
-# --------------------------------------------------
-# BLOCCO B
-# --------------------------------------------------
+            "Prendo decisioni senza lasciarmi guidare dal bisogno di approvazione.",
 
-st.header("B - Relazione 1:1")
+            "Prima di reagire, mi prendo tempo per riflettere."
+        ]
+    },
 
-B1 = scala[st.radio(
-    "6. Evito di attribuire i comportamenti principalmente all’età; cerco altre spiegazioni.",
-    opzioni,
-    key="B1"
-)]
+    "B - Tu: Ascolto e Non Giudizio": {
 
-B2 = scala[st.radio(
-    "7. Ascolto colleghi di altre età con curiosità e senza interrompere.",
-    opzioni,
-    key="B2"
-)]
+        "immagine": "images/blocco_b.png",
 
-B3 = scala[st.radio(
-    "8. Evito etichette 'noi/loro' e uso un linguaggio inclusivo.",
-    opzioni,
-    key="B3"
-)]
+        "descrizione": """
+L'ascolto autentico e la curiosità permettono di
+comprendere prospettive differenti e superare stereotipi.
+""",
 
-B4 = scala[st.radio(
-    "9. Faccio domande per capire prima di valutare.",
-    opzioni,
-    key="B4"
-)]
+        "domande": [
 
-B5 = scala[st.radio(
-    "10. Riconosco e valorizzo contributi diversi dai miei.",
-    opzioni,
-    key="B5"
-)]
+            "Evito di attribuire i comportamenti principalmente all'età; cerco altre spiegazioni.",
 
-# --------------------------------------------------
-# BLOCCO C
-# --------------------------------------------------
+            "Ascolto colleghi di altre età con curiosità e senza interrompere.",
 
-st.header("C - Team / Gruppo")
+            "Evito etichette 'noi/loro' e uso un linguaggio inclusivo.",
 
-C1 = scala[st.radio(
-    "11. Nei meeting c’è spazio e tempo per ogni voce, a prescindere dall’età.",
-    opzioni,
-    key="C1"
-)]
+            "Faccio domande per capire prima di valutare.",
 
-C2 = scala[st.radio(
-    "12. Nessuno deve recitare una parte per sentirsi accettato nel team.",
-    opzioni,
-    key="C2"
-)]
+            "Riconosco e valorizzo contributi diversi dai miei."
+        ]
+    },
 
-C3 = scala[st.radio(
-    "13. Prima di giudicare, dedichiamo tempo a fare domande chiarificatrici.",
-    opzioni,
-    key="C3"
-)]
+    "C - Noi: Collaborazione e Decisioni Inclusive": {
 
-C4 = scala[st.radio(
-    "14. Affrontiamo e risolviamo le tensioni legate all’età invece di evitarle.",
-    opzioni,
-    key="C4"
-)]
+        "immagine": "images/blocco_c.png",
 
-C5 = scala[st.radio(
-    "15. Abbiamo regole condivise per collaborare in modo inclusivo.",
-    opzioni,
-    key="C5"
-)]
+        "descrizione": """
+L'inclusione si manifesta nella qualità delle relazioni
+e nella partecipazione alle decisioni del team.
+""",
 
-# --------------------------------------------------
-# BLOCCO D
-# --------------------------------------------------
+        "domande": [
 
-st.header("D - Organizzazione / Azienda")
+            "Nei meeting c'è spazio e tempo per ogni voce, a prescindere dall'età.",
 
-D1 = scala[st.radio(
-    "16. Manager e Team Leader mostrano rispetto e curiosità, non giudizio.",
-    opzioni,
-    key="D1"
-)]
+            "Nessuno deve recitare una parte per sentirsi accettato nel team.",
 
-D2 = scala[st.radio(
-    "17. Le decisioni tengono conto di prospettive di età diverse senza avvantaggiare sempre gli stessi.",
-    opzioni,
-    key="D2"
-)]
+            "Prima di giudicare dedichiamo tempo a fare domande chiarificatrici.",
 
-D3 = scala[st.radio(
-    "18. Posso esprimere dubbi o dissentire senza timore di conseguenze.",
-    opzioni,
-    key="D3"
-)]
+            "Affrontiamo e risolviamo le tensioni legate all'età invece di evitarle.",
 
-D4 = scala[st.radio(
-    "19. Le priorità e i criteri decisionali sono chiari e coerenti.",
-    opzioni,
-    key="D4"
-)]
+            "Abbiamo regole condivise per collaborare in modo inclusivo."
+        ]
+    },
 
-D5 = scala[st.radio(
-    "20. È legittimo dire 'non fa per me' o chiedere alternative senza penalità.",
-    opzioni,
-    key="D5"
-)]
+    "D - Azienda: Clima di Cooperazione Intergenerazionale": {
 
-# --------------------------------------------------
-# CALCOLO
-# --------------------------------------------------
+        "immagine": "images/blocco_d.png",
 
-blocco_a = A1+A2+A3+A4+A5
-blocco_b = B1+B2+B3+B4+B5
-blocco_c = C1+C2+C3+C4+C5
-blocco_d = D1+D2+D3+D4+D5
+        "descrizione": """
+La cultura organizzativa e le pratiche aziendali
+possono favorire o ostacolare l'inclusione.
+""",
 
-totale = (
-    blocco_a +
-    blocco_b +
-    blocco_c +
-    blocco_d
-)
+        "domande": [
 
-# --------------------------------------------------
+            "Manager e Team Leader mostrano rispetto e curiosità, non giudizio.",
+
+            "Le decisioni tengono conto di prospettive di età diverse senza favorire sempre gli stessi.",
+
+            "Posso esprimere dubbi o dissentire senza timore di conseguenze.",
+
+            "Le priorità e i criteri decisionali sono chiari e coerenti.",
+
+            "È legittimo dire 'non fa per me' o chiedere alternative senza penalità."
+        ]
+    }
+}
+
+# ==================================================
+# GENERAZIONE DINAMICA
+# ==================================================
+
+risultati_blocchi = {}
+numero_domanda = 1
+
+for nome_blocco, dati in questionario.items():
+
+    st.divider()
+
+    st.image(
+        dati["immagine"],
+        width=180
+    )
+
+    st.header(nome_blocco)
+
+    st.markdown(dati["descrizione"])
+
+    totale_blocco = 0
+
+    for domanda in dati["domande"]:
+
+        risposta = st.radio(
+            f"{numero_domanda}. {domanda}",
+            list(scala.keys()),
+            horizontal=True,
+            key=f"Q{numero_domanda}"
+        )
+
+        totale_blocco += scala[risposta]
+
+        numero_domanda += 1
+
+    risultati_blocchi[nome_blocco] = totale_blocco
+
+# ==================================================
 # PROFILI
-# --------------------------------------------------
+# ==================================================
 
 def profilo(score):
 
@@ -224,74 +200,109 @@ def profilo(score):
     else:
         return "Molto inclusivo"
 
+# ==================================================
+# DESCRIZIONI PROFILI
+# ==================================================
 
-# --------------------------------------------------
-# RISULTATO
-# --------------------------------------------------
+descrizioni_profili = {
 
-if st.button("📊 Calcola il mio risultato"):
+    "Poco inclusivo":
+    """
+### Poco inclusivo (0-39)
 
-    st.success("Questionario completato!")
+Pratiche e comportamenti inclusivi non sono ancora stabili.
+
+La priorità è costruire basi solide:
+- ascolto
+- rispetto reciproco
+- chiarezza nei confini
+- collaborazione
+- sicurezza psicologica
+""",
+
+    "In avvio":
+    """
+### In avvio (40-59)
+
+Sono presenti buone intenzioni e primi comportamenti inclusivi,
+ma l'applicazione è ancora discontinua.
+
+L'obiettivo è trasformare le buone intenzioni
+in comportamenti abituali.
+""",
+
+    "Inclusivo":
+    """
+### Inclusivo (60-79)
+
+La cultura inclusiva è ben presente.
+
+Le persone ascoltano, collaborano e valorizzano le differenze.
+
+Occorre consolidare le pratiche più efficaci
+e ridurre eventuali aree di fragilità.
+""",
+
+    "Molto inclusivo":
+    """
+### Molto inclusivo (80-100)
+
+Il livello di inclusione è elevato e diffuso.
+
+La cultura di rispetto e cooperazione è consolidata.
+
+L'obiettivo è mantenere questi risultati e diventare modello positivo per gli altri.
+"""
+}
+
+# ==================================================
+# RISULTATI
+# ==================================================
+
+if st.button("📊 Visualizza il risultato"):
+
+    totale = sum(risultati_blocchi.values())
+
+    st.divider()
+
+    st.success("Questionario completato")
 
     st.metric(
         "Punteggio Totale",
         f"{totale}/100"
     )
 
+    profilo_finale = profilo(totale)
+
     st.metric(
         "Profilo",
-        profilo(totale)
+        profilo_finale
     )
+
+    # Descrizione profilo
+    st.markdown(descrizioni_profili[profilo_finale])
 
     st.divider()
 
-    st.subheader("Punteggi per area")
+    st.subheader("Dettaglio per area")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
+
+    elementi = list(risultati_blocchi.items())
 
     with col1:
-        st.metric("Blocco A", f"{blocco_a}/25")
+        st.metric(elementi[0][0], f"{elementi[0][1]}/25")
+        st.metric(elementi[1][0], f"{elementi[1][1]}/25")
 
     with col2:
-        st.metric("Blocco B", f"{blocco_b}/25")
+        st.metric(elementi[2][0], f"{elementi[2][1]}/25")
+        st.metric(elementi[3][0], f"{elementi[3][1]}/25")
 
-    with col3:
-        st.metric("Blocco C", f"{blocco_c}/25")
-
-    with col4:
-        st.metric("Blocco D", f"{blocco_d}/25")
-
-    blocchi = {
-        "A - Io": blocco_a,
-        "B - Relazione 1:1": blocco_b,
-        "C - Team": blocco_c,
-        "D - Organizzazione": blocco_d
-    }
-
-    blocco_debole = min(blocchi, key=blocchi.get)
-
-    st.warning(
-        f"Area prioritaria di miglioramento: {blocco_debole}"
+    area_debole = min(
+        risultati_blocchi,
+        key=risultati_blocchi.get
     )
 
-    # Suggerimenti sintetici
-
-    if blocco_debole.startswith("A"):
-        st.info(
-            "Lavora su consapevolezza personale, valori e capacità di comunicare i tuoi confini."
-        )
-
-    elif blocco_debole.startswith("B"):
-        st.info(
-            "Allenati nell'ascolto attivo, nella curiosità e nel non giudizio."
-        )
-
-    elif blocco_debole.startswith("C"):
-        st.info(
-            "Favorisci pratiche di team inclusive e una maggiore partecipazione alle decisioni."
-        )
-
-    else:
-        st.info(
-            "Promuovi maggiore trasparenza, sicurezza psicologica e inclusione organizzativa."
-        )
+    st.warning(
+        f"Area prioritaria di sviluppo: {area_debole}"
+    )
