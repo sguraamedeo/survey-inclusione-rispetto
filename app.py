@@ -49,6 +49,9 @@ opzioni = list(scala.keys())
 
 st.header("A - Io: consapevolezza e confini")
 
+st.subheader("In questo blocco osserva come ti relazioni con te stesso/a nelle situazioni che contano. Valuta comportamenti reali degli ultimi 30–60 giorni (non le intenzioni).
+")
+
 A1 = scala[st.radio(
     "1. Conosco e so nominare i valori che guidano le mie scelte al lavoro.",
     opzioni,
