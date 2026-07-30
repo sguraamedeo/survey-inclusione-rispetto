@@ -27,11 +27,11 @@ Per ogni affermazione scegli il livello che meglio rappresenta la tua esperienza
 
 ### Scala di valutazione
 
-- Per niente = 1
-- Poco = 2
-- Abbastanza = 3
-- Molto = 4
-- Del tutto = 5
+- Per niente 
+- Poco 
+- Abbastanza 
+- Molto 
+- Del tutto 
 """)
 
 # ==================================================
@@ -39,7 +39,7 @@ Per ogni affermazione scegli il livello che meglio rappresenta la tua esperienza
 # ==================================================
 
 scala = {
-    "Per niente": 1,
+    "Per niente": 0,
     "Poco": 2,
     "Abbastanza": 3,
     "Molto": 4,
